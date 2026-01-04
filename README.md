@@ -42,14 +42,15 @@ IP.Guide/
 │   ├── index.html
 │   ├── styles.css
 │   └── app.js
-├── docs/               # Documentación
-│   ├── README.md
-│   ├── api/
-│   │   ├── endpoints.md
-│   │   └── respuestas.md
-│   └── ejemplos/
-│       └── ejemplos.md
-└── README.md           # Este archivo
+├── docs/               # Documentación HTML
+│   ├── index.html      # Página principal
+│   ├── styles.css      # Estilos compartidos
+│   ├── endpoints.html  # Documentación de endpoints
+│   ├── respuestas.html # Estructura de respuestas
+│   └── ejemplos.html   # Ejemplos de código
+├── README.md           # Este archivo
+├── CHANGELOG.md        # Historial de cambios
+└── LICENSE             # Licencia MIT
 ```
 
 ## 🎮 Demo Interactiva
@@ -64,7 +65,7 @@ La demo permite:
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/tu-usuario/IP.Guide.git
+git clone https://github.com/alexanderoviedofadul/IP.Guide.git
 cd IP.Guide
 
 # Iniciar servidor local
@@ -78,10 +79,10 @@ open http://localhost:8080
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Visión General](docs/README.md) | Introducción al servicio |
-| [Endpoints](docs/api/endpoints.md) | Todos los endpoints disponibles |
-| [Respuestas](docs/api/respuestas.md) | Estructura de respuestas JSON |
-| [Ejemplos](docs/ejemplos/ejemplos.md) | Código en JS, Python, PHP, Go |
+| [Introducción](docs/index.html) | Visión general del servicio |
+| [Endpoints](docs/endpoints.html) | Todos los endpoints disponibles |
+| [Respuestas](docs/respuestas.html) | Estructura de respuestas JSON |
+| [Ejemplos](docs/ejemplos.html) | Código en JS, Python, PHP, Go |
 
 ## 🔗 Endpoints
 
@@ -120,6 +121,13 @@ open http://localhost:8080
 - **Leaflet.js** para mapas interactivos
 - API de **ip.guide** (gratuita, sin autenticación)
 
+## 👤 Autor
+
+**Alexander Oviedo Fadul**
+
+- 🌐 Website: [alexanderoviedofadul.dev](https://alexanderoviedofadul.dev)
+- 💼 GitHub: [@alexanderoviedofadul](https://github.com/alexanderoviedofadul)
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
@@ -127,5 +135,6 @@ Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detal
 ---
 
 <p align="center">
-  Hecho con ❤️ para la comunidad
+  Hecho con ❤️ por <a href="https://alexanderoviedofadul.dev">Alexander Oviedo Fadul</a>
 </p>
+
