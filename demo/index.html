@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP.Guide Explorer - Demo Interactiva</title>
     <meta name="description" content="Explora información de IPs, redes y ASN con la API gratuita de IP.Guide">
-    
+
     <!-- Leaflet CSS para mapas -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Navbar Global -->
+    <nav class="global-nav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo">🌐 IP.Guide</a>
+            <div class="nav-links">
+                <a href="../">Inicio</a>
+                <a href="../docs/">Documentación</a>
+                <a href="./" class="active">Demo</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="app-container">
         <!-- Header -->
         <header class="header">
             <div class="logo">
-                <span class="logo-icon">🌐</span>
-                <h1>IP.Guide <span class="logo-suffix">Explorer</span></h1>
+                <span class="logo-icon">🎮</span>
+                <h1>Demo <span class="logo-suffix">Interactiva</span></h1>
             </div>
-            <p class="tagline">API gratuita para consultas de IP, red y ASN</p>
+            <p class="tagline">Explora IPs, redes y ASN en tiempo real</p>
         </header>
 
         <!-- Sección Tu IP -->
@@ -89,4 +105,5 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
