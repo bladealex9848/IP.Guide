@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoints - IP.Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">🌐 IP.Guide</a>
+            <div class="nav-links">
+                <a href="../">Inicio</a>
+                <a href="./" class="active">Documentación</a>
+                <a href="../demo/">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Guía</h3>
+                <ul>
+                    <li><a href="./">Introducción</a></li>
+                    <li><a href="endpoints.html" class="active">Endpoints</a></li>
+                    <li><a href="respuestas.html">Respuestas JSON</a></li>
+                    <li><a href="ejemplos.html">Ejemplos de Código</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="../demo/">Demo Interactiva</a></li>
+                    <li><a href="https://ip.guide" target="_blank">API Oficial ↗</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="content">
+            <h1>Endpoints de la API</h1>
+
+            <p>IP.Guide ofrece cuatro endpoints simples para obtener toda la información que necesitas sobre IPs, redes
+                y sistemas autónomos.</p>
+
+            <div class="intro-card">
+                <h2>🌐 URL Base</h2>
+                <code style="font-size: 1.25rem; color: var(--accent);">https://ip.guide</code>
+            </div>
+
+            <h2>1. Consultar IP Propia</h2>
+            <p>Obtiene información de la IP desde donde se realiza la petición.</p>
+
+            <table>
+                <tr>
+                    <th>Método</th>
+                    <td><code>GET</code></td>
+                </tr>
+                <tr>
+                    <th>Endpoint</th>
+                    <td><code>/</code></td>
+                </tr>
+            </table>
+
+            <div class="code-block">
+                <div class="code-header">Ejemplo</div>
+                <pre><code><span class="code-prompt">$</span> curl https://ip.guide/</code></pre>
+            </div>
+
+            <h2>2. Consultar IP Específica</h2>
+            <p>Obtiene información de cualquier dirección IPv4 o IPv6.</p>
+
+            <table>
+                <tr>
+                    <th>Método</th>
+                    <td><code>GET</code></td>
+                </tr>
+                <tr>
+                    <th>Endpoint</th>
+                    <td><code>/{IP}</code></td>
+                </tr>
+                <tr>
+                    <th>Parámetro</th>
+                    <td>IP - Dirección IPv4 o IPv6</td>
+                </tr>
+            </table>
+
+            <div class="code-block">
+                <div class="code-header">Ejemplos</div>
+                <pre><code><span class="code-comment"># IPv4</span>
+<span class="code-prompt">$</span> curl https://ip.guide/8.8.8.8
+
+<span class="code-comment"># IPv6</span>
+<span class="code-prompt">$</span> curl https://ip.guide/2607:f8b0:4004:801::200e</code></pre>
+            </div>
+
+            <h2>3. Consultar Rango de Red (CIDR)</h2>
+            <p>Obtiene información de un bloque de red en notación CIDR.</p>
+
+            <table>
+                <tr>
+                    <th>Método</th>
+                    <td><code>GET</code></td>
+                </tr>
+                <tr>
+                    <th>Endpoint</th>
+                    <td><code>/{CIDR}</code></td>
+                </tr>
+                <tr>
+                    <th>Parámetro</th>
+                    <td>CIDR - Notación CIDR (ej: 192.168.1.0/24)</td>
+                </tr>
+            </table>
+
+            <div class="code-block">
+                <div class="code-header">Ejemplo</div>
+                <pre><code><span class="code-prompt">$</span> curl https://ip.guide/191.108.64.0/20</code></pre>
+            </div>
+
+            <h2>4. Consultar Sistema Autónomo (ASN)</h2>
+            <p>Obtiene información detallada de un ASN, incluyendo todos sus prefijos anunciados.</p>
+
+            <table>
+                <tr>
+                    <th>Método</th>
+                    <td><code>GET</code></td>
+                </tr>
+                <tr>
+                    <th>Endpoint</th>
+                    <td><code>/AS{number}</code></td>
+                </tr>
+                <tr>
+                    <th>Parámetro</th>
+                    <td>number - Número del Sistema Autónomo</td>
+                </tr>
+            </table>
+
+            <div class="code-block">
+                <div class="code-header">Ejemplo</div>
+                <pre><code><span class="code-prompt">$</span> curl https://ip.guide/AS15169</code></pre>
+            </div>
+
+            <h2>📋 Resumen de Endpoints</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Endpoint</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>GET</code></td>
+                        <td><code>/</code></td>
+                        <td>Tu IP actual</td>
+                    </tr>
+                    <tr>
+                        <td><code>GET</code></td>
+                        <td><code>/{IP}</code></td>
+                        <td>IP específica (IPv4/IPv6)</td>
+                    </tr>
+                    <tr>
+                        <td><code>GET</code></td>
+                        <td><code>/{CIDR}</code></td>
+                        <td>Rango de red</td>
+                    </tr>
+                    <tr>
+                        <td><code>GET</code></td>
+                        <td><code>/AS{num}</code></td>
+                        <td>Sistema Autónomo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="intro-card" style="margin-top: 2rem;">
+                <h3>💡 Notas</h3>
+                <ul style="margin: 0.5rem 0 0 1.5rem; color: var(--text-secondary);">
+                    <li><strong>Sin autenticación:</strong> No se requiere API key</li>
+                    <li><strong>Formato:</strong> Todas las respuestas son JSON</li>
+                    <li><strong>CORS:</strong> Habilitado para uso desde navegadores</li>
+                    <li><strong>Rate Limiting:</strong> No documentado oficialmente, usar con responsabilidad</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>Documentación para <a href="https://ip.guide" target="_blank">ip.guide</a> API</p>
+    </footer>
+</body>
+
+</html>

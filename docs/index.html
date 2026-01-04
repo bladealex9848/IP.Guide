@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - IP.Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">🌐 IP.Guide</a>
+            <div class="nav-links">
+                <a href="../">Inicio</a>
+                <a href="./" class="active">Documentación</a>
+                <a href="../demo/">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Guía</h3>
+                <ul>
+                    <li><a href="./" class="active">Introducción</a></li>
+                    <li><a href="endpoints.html">Endpoints</a></li>
+                    <li><a href="respuestas.html">Respuestas JSON</a></li>
+                    <li><a href="ejemplos.html">Ejemplos de Código</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="../demo/">Demo Interactiva</a></li>
+                    <li><a href="https://ip.guide" target="_blank">API Oficial ↗</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="content">
+            <h1>IP.Guide - Documentación</h1>
+
+            <div class="intro-card">
+                <h2>🌐 ¿Qué es IP.Guide?</h2>
+                <p><strong>IP.Guide</strong> es una API REST gratuita y de código abierto que proporciona información
+                    detallada sobre direcciones IP, rangos de red (CIDR) y Sistemas Autónomos (ASN).</p>
+            </div>
+
+            <h2>✨ Características Principales</h2>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">🆓</span>
+                    <div>
+                        <strong>Gratuita</strong>
+                        <p>Sin costos, sin límites de uso conocidos</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔓</span>
+                    <div>
+                        <strong>Sin Autenticación</strong>
+                        <p>No requiere API key ni registro</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🌍</span>
+                    <div>
+                        <strong>IPv4 e IPv6</strong>
+                        <p>Soporta ambos protocolos</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📍</span>
+                    <div>
+                        <strong>Geolocalización</strong>
+                        <p>Ciudad, país, zona horaria, coordenadas</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🌐</span>
+                    <div>
+                        <strong>Información de Red</strong>
+                        <p>CIDR, rango de hosts, ASN</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🏢</span>
+                    <div>
+                        <strong>Datos de ASN</strong>
+                        <p>Organización, RIR, prefijos anunciados</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📋 Casos de Uso</h2>
+            <ul class="use-cases">
+                <li><strong>Seguridad:</strong> Identificar origen de tráfico sospechoso</li>
+                <li><strong>Analytics:</strong> Geolocalizar visitantes de tu sitio web</li>
+                <li><strong>DevOps:</strong> Automatizar verificaciones de infraestructura</li>
+                <li><strong>Investigación:</strong> Análisis de redes y sistemas autónomos</li>
+            </ul>
+
+            <h2>🚀 Inicio Rápido</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Terminal</span>
+                </div>
+                <pre><code><span class="code-comment"># Obtener info de tu IP actual</span>
+<span class="code-prompt">$</span> curl https://ip.guide/
+
+<span class="code-comment"># Consultar una IP específica</span>
+<span class="code-prompt">$</span> curl https://ip.guide/8.8.8.8
+
+<span class="code-comment"># Consultar un ASN</span>
+<span class="code-prompt">$</span> curl https://ip.guide/AS15169</code></pre>
+            </div>
+
+            <h2>📚 Contenido de la Documentación</h2>
+
+            <div class="doc-links">
+                <a href="endpoints.html" class="doc-link">
+                    <span class="doc-link-icon">🔗</span>
+                    <div>
+                        <strong>Endpoints</strong>
+                        <p>Todos los endpoints disponibles y cómo usarlos</p>
+                    </div>
+                </a>
+                <a href="respuestas.html" class="doc-link">
+                    <span class="doc-link-icon">📦</span>
+                    <div>
+                        <strong>Respuestas JSON</strong>
+                        <p>Estructura detallada de las respuestas de la API</p>
+                    </div>
+                </a>
+                <a href="ejemplos.html" class="doc-link">
+                    <span class="doc-link-icon">💻</span>
+                    <div>
+                        <strong>Ejemplos de Código</strong>
+                        <p>Código listo para usar en JavaScript, Python, PHP, Go</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="cta-box">
+                <h3>¿Listo para probar?</h3>
+                <p>Explora la API en nuestra demo interactiva</p>
+                <a href="../demo/" class="btn-primary">🎮 Abrir Demo</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>Documentación para <a href="https://ip.guide" target="_blank">ip.guide</a> API</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Código - IP.Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">🌐 IP.Guide</a>
+            <div class="nav-links">
+                <a href="../">Inicio</a>
+                <a href="./" class="active">Documentación</a>
+                <a href="../demo/">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Guía</h3>
+                <ul>
+                    <li><a href="./">Introducción</a></li>
+                    <li><a href="endpoints.html">Endpoints</a></li>
+                    <li><a href="respuestas.html">Respuestas JSON</a></li>
+                    <li><a href="ejemplos.html" class="active">Ejemplos de Código</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="content">
+            <h1>Ejemplos de Código</h1>
+
+            <h2>🖥️ cURL</h2>
+            <div class="code-block">
+                <div class="code-header">Terminal</div>
+                <pre><code><span class="code-comment"># Tu IP actual</span>
+curl https://ip.guide/
+
+<span class="code-comment"># IP específica con formato bonito</span>
+curl -s https://ip.guide/8.8.8.8 | jq .
+
+<span class="code-comment"># Consultar ASN</span>
+curl https://ip.guide/AS15169</code></pre>
+            </div>
+
+            <h2>🟨 JavaScript (Fetch)</h2>
+            <div class="code-block">
+                <div class="code-header">JavaScript</div>
+                <pre><code><span class="code-comment">// Consultar IP actual</span>
+async function getMyIP() {
+  const response = await fetch('https://ip.guide/');
+  const data = await response.json();
+  console.log(`Tu IP: ${data.ip}`);
+  console.log(`País: ${data.location.country}`);
+  return data;
+}
+
+<span class="code-comment">// Consultar IP específica</span>
+async function lookupIP(ip) {
+  const response = await fetch(`https://ip.guide/${ip}`);
+  return response.json();
+}
+
+<span class="code-comment">// Uso</span>
+getMyIP();
+lookupIP('8.8.8.8').then(console.log);</code></pre>
+            </div>
+
+            <h2>🐍 Python</h2>
+            <div class="code-block">
+                <div class="code-header">Python</div>
+                <pre><code>import requests
+
+def get_my_ip():
+    response = requests.get('https://ip.guide/')
+    data = response.json()
+    print(f"Tu IP: {data['ip']}")
+    return data
+
+def lookup_ip(ip: str):
+    response = requests.get(f'https://ip.guide/{ip}')
+    return response.json()
+
+def lookup_asn(asn: int):
+    response = requests.get(f'https://ip.guide/AS{asn}')
+    return response.json()
+
+<span class="code-comment"># Uso</span>
+my_info = get_my_ip()
+google = lookup_ip('8.8.8.8')
+print(google['network']['autonomous_system']['name'])</code></pre>
+            </div>
+
+            <h2>🐘 PHP</h2>
+            <div class="code-block">
+                <div class="code-header">PHP</div>
+                <pre><code>&lt;?php
+
+function getMyIP(): array {
+    $response = file_get_contents('https://ip.guide/');
+    return json_decode($response, true);
+}
+
+function lookupIP(string $ip): array {
+    $response = file_get_contents("https://ip.guide/{$ip}");
+    return json_decode($response, true);
+}
+
+<span class="code-comment">// Uso</span>
+$myInfo = getMyIP();
+echo "Tu IP: " . $myInfo['ip'];
+
+$google = lookupIP('8.8.8.8');
+echo $google['network']['autonomous_system']['organization'];</code></pre>
+            </div>
+
+            <h2>🔷 Go</h2>
+            <div class="code-block">
+                <div class="code-header">Go</div>
+                <pre><code>package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "net/http"
+    "io"
+)
+
+type IPInfo struct {
+    IP       string `json:"ip"`
+    Location struct {
+        Country string `json:"country"`
+    } `json:"location"`
+}
+
+func lookupIP(ip string) (*IPInfo, error) {
+    resp, _ := http.Get("https://ip.guide/" + ip)
+    defer resp.Body.Close()
+    body, _ := io.ReadAll(resp.Body)
+    
+    var info IPInfo
+    json.Unmarshal(body, &info)
+    return &info, nil
+}
+
+func main() {
+    info, _ := lookupIP("8.8.8.8")
+    fmt.Printf("%s - %s\n", info.IP, info.Location.Country)
+}</code></pre>
+            </div>
+
+            <div class="cta-box">
+                <h3>¿Listo para probar?</h3>
+                <p>Prueba estos ejemplos en nuestra demo interactiva</p>
+                <a href="../demo/" class="btn-primary">🎮 Abrir Demo</a>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

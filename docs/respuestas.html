@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuestas JSON - IP.Guide</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">🌐 IP.Guide</a>
+            <div class="nav-links">
+                <a href="../">Inicio</a>
+                <a href="./" class="active">Documentación</a>
+                <a href="../demo/">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Guía</h3>
+                <ul>
+                    <li><a href="./">Introducción</a></li>
+                    <li><a href="endpoints.html">Endpoints</a></li>
+                    <li><a href="respuestas.html" class="active">Respuestas JSON</a></li>
+                    <li><a href="ejemplos.html">Ejemplos de Código</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="content">
+            <h1>Respuestas JSON</h1>
+
+            <h2>📍 Respuesta IP</h2>
+            <div class="code-block">
+                <div class="code-header">GET /8.8.8.8</div>
+                <pre><code>{
+  <span class="code-key">"ip"</span>: <span class="code-string">"8.8.8.8"</span>,
+  <span class="code-key">"network"</span>: {
+    <span class="code-key">"cidr"</span>: <span class="code-string">"8.8.8.0/24"</span>,
+    <span class="code-key">"autonomous_system"</span>: {
+      <span class="code-key">"asn"</span>: <span class="code-number">15169</span>,
+      <span class="code-key">"name"</span>: <span class="code-string">"GOOGLE"</span>
+    }
+  },
+  <span class="code-key">"location"</span>: {
+    <span class="code-key">"country"</span>: <span class="code-string">"United States"</span>,
+    <span class="code-key">"latitude"</span>: <span class="code-number">37.751</span>
+  }
+}</code></pre>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ip</code></td>
+                        <td>Dirección IP consultada</td>
+                    </tr>
+                    <tr>
+                        <td><code>network.cidr</code></td>
+                        <td>Bloque de red CIDR</td>
+                    </tr>
+                    <tr>
+                        <td><code>network.autonomous_system</code></td>
+                        <td>Info del ASN</td>
+                    </tr>
+                    <tr>
+                        <td><code>location</code></td>
+                        <td>Geolocalización</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🏢 Respuesta ASN</h2>
+            <div class="code-block">
+                <div class="code-header">GET /AS15169</div>
+                <pre><code>{
+  <span class="code-key">"asn"</span>: <span class="code-number">15169</span>,
+  <span class="code-key">"name"</span>: <span class="code-string">"GOOGLE"</span>,
+  <span class="code-key">"organization"</span>: <span class="code-string">"Google LLC"</span>,
+  <span class="code-key">"prefixes"</span>: {
+    <span class="code-key">"v4"</span>: [<span class="code-string">"8.8.8.0/24"</span>, ...],
+    <span class="code-key">"v6"</span>: [<span class="code-string">"2001:4860::/32"</span>, ...]
+  }
+}</code></pre>
+            </div>
+
+            <h2>🌍 Códigos RIR</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Región</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ARIN</code></td>
+                        <td>Norteamérica</td>
+                    </tr>
+                    <tr>
+                        <td><code>RIPE</code></td>
+                        <td>Europa</td>
+                    </tr>
+                    <tr>
+                        <td><code>APNIC</code></td>
+                        <td>Asia-Pacífico</td>
+                    </tr>
+                    <tr>
+                        <td><code>LACNIC</code></td>
+                        <td>Latinoamérica</td>
+                    </tr>
+                    <tr>
+                        <td><code>AFRINIC</code></td>
+                        <td>África</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+</body>
+
+</html>
