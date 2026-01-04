@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP.Guide Explorer - Demo Interactiva</title>
+    <meta name="description" content="Explora información de IPs, redes y ASN con la API gratuita de IP.Guide">
+    
+    <!-- Leaflet CSS para mapas -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌐</span>
+                <h1>IP.Guide <span class="logo-suffix">Explorer</span></h1>
+            </div>
+            <p class="tagline">API gratuita para consultas de IP, red y ASN</p>
+        </header>
+
+        <!-- Sección Tu IP -->
+        <section class="card my-ip-card" id="myIpCard">
+            <div class="card-header">
+                <h2>🔍 Tu IP Actual</h2>
+                <button class="btn btn-refresh" id="refreshMyIp" title="Actualizar">↻</button>
+            </div>
+            <div class="my-ip-content" id="myIpContent">
+                <div class="loading-spinner"></div>
+                <span>Detectando tu IP...</span>
+            </div>
+        </section>
+
+        <!-- Buscador -->
+        <section class="card search-card">
+            <div class="card-header">
+                <h2>🔎 Buscar IP, CIDR o ASN</h2>
+            </div>
+            <div class="search-container">
+                <div class="search-tabs">
+                    <button class="tab active" data-type="ip">IP</button>
+                    <button class="tab" data-type="asn">ASN</button>
+                </div>
+                <div class="search-input-group">
+                    <input type="text" id="searchInput" placeholder="Ej: 8.8.8.8 o 192.168.0.0/24" autocomplete="off">
+                    <button class="btn btn-primary" id="searchBtn">Buscar</button>
+                </div>
+                <div class="example-queries">
+                    <span>Ejemplos:</span>
+                    <button class="example-btn" data-query="8.8.8.8" data-type="ip">8.8.8.8</button>
+                    <button class="example-btn" data-query="1.1.1.1" data-type="ip">1.1.1.1</button>
+                    <button class="example-btn" data-query="15169" data-type="asn">AS15169</button>
+                    <button class="example-btn" data-query="13335" data-type="asn">AS13335</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados -->
+        <section class="card results-card" id="resultsCard" style="display: none;">
+            <div class="card-header">
+                <h2 id="resultsTitle">📊 Resultados</h2>
+                <button class="btn btn-close" id="closeResults">✕</button>
+            </div>
+            <div class="results-content" id="resultsContent"></div>
+        </section>
+
+        <!-- Mapa -->
+        <section class="card map-card" id="mapCard" style="display: none;">
+            <div class="card-header">
+                <h2>📍 Ubicación</h2>
+            </div>
+            <div id="map"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <a href="https://ip.guide" target="_blank">ip.guide</a> API</p>
+            <p class="footer-note">Demo gratuita - Sin autenticación requerida</p>
+        </footer>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
