@@ -65,7 +65,7 @@ La demo permite:
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/alexanderoviedofadul/IP.Guide.git
+git clone https://github.com/bladealex9848/IP.Guide.git
 cd IP.Guide
 
 # Iniciar servidor local
@@ -126,7 +126,7 @@ open http://localhost:8080
 **Alexander Oviedo Fadul**
 
 - 🌐 Website: [alexanderoviedofadul.dev](https://alexanderoviedofadul.dev)
-- 💼 GitHub: [@alexanderoviedofadul](https://github.com/alexanderoviedofadul)
+- 💼 GitHub: [@bladealex9848](https://github.com/bladealex9848)
 
 ## 📄 Licencia
 
